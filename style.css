@@ -1,0 +1,386 @@
+
+
+/*------------------------------------------------
+	GENERALS / DEFAULTS
+-------------------------------------------------*/
+
+@font-face {
+    font-family: 'vag bold';
+    src: url('source/fonts/vag_rounded_bold-webfont.eot');
+    src: url('source/fonts/vag_rounded_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('source/fonts/vag_rounded_bold-webfont.woff2') format('woff2'),
+         url('source/fonts/vag_rounded_bold-webfont.woff') format('woff'),
+         url('source/fonts/vag_rounded_bold-webfont.ttf') format('truetype'),
+         url('source/fonts/vag_rounded_bold-webfont.svg#vag_roundedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.retquiz {
+	font-size: 1.2em;
+	background: url(source/images/texture.png);
+	height: 100%;
+	text-align: center;
+	overflow: hidden;
+}
+
+.retquiz-container {
+	max-width: 700px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.retquiz-clearfix {
+	clear: both;
+}
+
+.retquiz-content {
+	padding: 0 10px;
+}
+
+
+
+/*------------------------------------------------
+	HEADER
+-------------------------------------------------*/
+
+.retquiz-header {
+	background: transparent;
+	padding: 20px 10px;
+	margin-bottom: 20px;
+	height: 130px;
+	position: relative;
+	font-size: .85em;
+}
+
+.retquiz-header-container {
+	width: 100%;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.retquiz-header-container:before {
+	content: "";
+	background: #009fe3;
+    height: 600px;
+    -webkit-transform: skewY(-4.2deg);
+    transform: skewY(-4.2deg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+}
+
+.retquiz-header h1 {
+	color: #fff;
+	font: 3.8em/1 vag bold;
+	position: relative;
+	text-align: left;
+}
+
+.retquiz-header h1 span {
+	color: #ffed00;
+}
+
+
+
+/*------------------------------------------------
+	MAIN
+-------------------------------------------------*/
+
+.retquiz-intro {
+	text-align: left;
+	margin: 30px 0 20px;
+	color: #143b62;
+	font-family: vag bold;
+}
+
+.retquiz-intro p {
+	font-size: 1.4em;
+	line-height: 1.5;
+	margin: 1em 0;
+}
+
+
+
+/*------------------------------------------------
+	QUESTIONS
+-------------------------------------------------*/
+
+.retquiz-question-wrap {
+	float: left;
+	margin-bottom: 40px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.retquiz-qu {
+	width: 100%;
+}
+
+.retquiz-ans {
+	width: 50%;
+	float: left;
+	cursor: pointer;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.retquiz-ans > div {
+	padding: 10px 10px 0;
+	background: #d6d6d6;
+	text-align: left;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	position: relative;
+}
+
+.retquiz-ans > div:hover {
+	background: #ddd;
+}
+
+.retquiz-answered .retquiz-ans.active > div {
+	background: #e3231c;
+}
+
+.retquiz-answered .retquiz-ans.active {
+	opacity: 1;
+}
+
+.retquiz-answered .retquiz-ans {
+	opacity: .7;
+}
+
+.retquiz-answered .retquiz-ans.active p {
+	color: #fff;
+}
+
+.retquiz-ans:nth-last-child(2n+1) > div {
+	margin: 8px 0 0 4px;
+}
+
+.retquiz-ans:nth-last-child(2n) > div {
+	margin: 8px 4px 0 0;
+}
+
+.retquiz-ans p {
+	font: 1.4em VAG Rounded W01 Light;
+	color: #143b62;
+	padding: 10px 0;
+}
+
+.retquiz-ans .fa {
+	margin-right: 5px;
+	font-size: 1.4em;
+}
+
+.retquiz-finished .retquiz-ans {
+	cursor: default;
+}
+
+.retquiz-finished .retquiz-ans > div:hover {
+	background: #d6d6d6;
+}
+
+.retquiz-finished .retquiz-ans.active > div:hover {
+	background: #e3231c;
+}
+
+.retquiz-source.retquiz-source {
+	padding: 5px;
+	background: rgba(0,159,227,.6);
+	color: #fff;
+	display: block;
+	font-style: italic;
+	font-size: .9em;
+	text-decoration: none;
+	display: block;
+}
+
+.retquiz-source a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.retquiz-source a:hover {
+	text-decoration: underline;
+}
+
+.retquiz-source.retquiz-source:hover {
+	background: rgba(0,159,227,.9);
+}
+
+
+
+/*------------------------------------------------
+	RESULTS
+-------------------------------------------------*/
+
+.retquiz-results {
+	width: 100%;
+	float: left;
+}
+
+.retquiz-result-wrap {
+	display: none;
+	border: 21px solid #143b62;
+	background: #fff;
+	font: 1.25em/1.4 VAG Rounded W01 Light;
+	padding: 30px 20px 15px;
+}
+
+.retquiz-dest {
+	color: #143b62;
+	font-size: 1.2em;
+	margin-bottom: 15px;
+}
+
+.retquiz-dest span {
+	display: block;
+	font-size: 2.3em;
+	color: #e3231c;
+}
+
+@media screen and (max-width: 500px) {
+	.retquiz-result-5 .retquiz-dest span {
+		font-size: 1.4em;
+		line-height: 1;
+		margin-top: 5px;
+	}
+}
+
+.retquiz-dest-img {
+	margin-top: 20px;
+}
+
+.retquiz-share-bar {
+	background: #e3231c;
+	color: #fff;
+	padding: 10px;
+	margin-top: 30px;
+}
+
+.retquiz-share-bar span {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.retquiz-share-bar a {
+	-webkit-transition: .3s;
+	transition: .3s;
+}
+
+.retquiz-share-bar a:hover {
+	opacity: .9;
+}
+
+
+
+/*------------------------------------------------
+	BOTTOM BAR
+-------------------------------------------------*/
+
+.retquiz-bottom-bar.retquiz-bottom-bar {
+	background: #3c3c3b;
+	padding: 15px 1%;
+	float: left;
+	width: 98%;
+	font: 1.25em VAG Rounded W01 Light;
+	color: #fff;
+	text-decoration: none;
+	-webkit-transition: .3s;
+	transition: .3s;
+	margin-top: 20px;
+}
+
+.retquiz-bottom-bar:hover {
+	opacity: .9;
+}
+
+.retquiz-bottom-bar span {
+	color: #ffed00;;
+}
+
+
+
+/*------------------------------------------------
+	MEDIA QUERIES
+-------------------------------------------------*/
+
+@media (min-width: 450px) {
+	
+	.retquiz-header {
+		height: 90px;
+	}
+
+}
+
+
+@media (min-width: 500px) {
+
+	.retquiz-header {
+		font-size: 1em;
+		padding: 30px 15px 40px;
+		height: 100px;
+		margin-bottom: 40px;
+	}
+
+	.retquiz-header-container:before {
+		bottom: 
+	}
+
+	.retquiz-ans:nth-last-child(2n+1) > div {
+		margin: 18px 0 0 9px;
+	}
+
+	.retquiz-ans:nth-last-child(2n) > div {
+		margin: 18px 9px 0 0;
+	}
+
+}
+
+
+@media (min-width: 600px) {
+
+	.retquiz-header {
+		height: 150px;
+		padding: 50px 10px 30px;
+		margin-bottom: 50px;
+	}
+
+	.retquiz-header h1 {
+		font: 4.8em/1 vag bold;
+	}
+
+	.retquiz-source.retquiz-source {
+		position: absolute;
+		top: 13px;
+		left: 13px;
+		display: inline;
+	}
+
+}
+
+
+@media (min-width: 700px) {
+
+	.retquiz-header {
+		margin-bottom: 60px;
+	}
+
+	.retquiz-header h1 {
+		font: 5em/1 vag bold;
+	}
+
+}
+
+
+
+
